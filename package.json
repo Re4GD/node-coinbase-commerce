@@ -1,6 +1,6 @@
 {
 	"name": "node-coinbase-commerce",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"description": "Node Coinbase Commerce API client",
 	"main": "dist/index.js",
 	"module": "dist/index.mjs",
