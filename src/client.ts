@@ -30,7 +30,7 @@ export class CoinbaseCommerceClient {
 				"https://api.commerce.coinbase.com/invoices",
 			);
 			return { result: data };
-		} catch (error: unknown) {
+		} catch (error) {
 			return { error: error };
 		}
 	}
@@ -44,7 +44,7 @@ export class CoinbaseCommerceClient {
 				params,
 			);
 			return { result: data };
-		} catch (error: unknown) {
+		} catch (error) {
 			return { error: error };
 		}
 	}
@@ -57,7 +57,7 @@ export class CoinbaseCommerceClient {
 				`https://api.commerce.coinbase.com/invoices/${params.invoice_code_or_invoice_id}`,
 			);
 			return { result: data };
-		} catch (error: unknown) {
+		} catch (error) {
 			return { error: error };
 		}
 	}
@@ -70,7 +70,7 @@ export class CoinbaseCommerceClient {
 				`https://api.commerce.coinbase.com/invoices/${params.invoice_code_or_invoice_id}/void`,
 			);
 			return { result: data };
-		} catch (error: unknown) {
+		} catch (error) {
 			return { error: error };
 		}
 	}
@@ -83,7 +83,7 @@ export class CoinbaseCommerceClient {
 				`https://api.commerce.coinbase.com/invoices/${params.invoice_code_or_invoice_id}/resolve`,
 			);
 			return { result: data };
-		} catch (error: unknown) {
+		} catch (error) {
 			return { error: error };
 		}
 	}
