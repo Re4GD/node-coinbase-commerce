@@ -24,6 +24,10 @@ export class CoinbaseCommerceClient {
 		this.axiosInstance = axios.create(this.globalRequestOptions);
 	}
 
+	// TODO charges
+	// TODO checkout
+	// TODO events
+
 	public async listInvoices(): Promise<Result<CBResponseWithPagination<any>>> {
 		try {
 			const { data } = await this.axiosInstance.get(
