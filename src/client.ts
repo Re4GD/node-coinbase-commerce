@@ -1,11 +1,12 @@
 import axios, { AxiosInstance, AxiosRequestConfig } from "axios";
-import { CBResponse, CBResponseWithPagination, Invoice, Result } from "./types";
+import { CBResponse, CBResponseWithPagination, Result } from "./types";
 import {
 	CreateInvoiceParams,
 	ResolveInvoiceParams,
 	ShowInvoiceParams,
 	VoidInvoiceParams,
 } from "./types/client";
+import { Invoice } from "./types/invoice";
 
 export class CoinbaseCommerceClient {
 	private axiosInstance: AxiosInstance;
