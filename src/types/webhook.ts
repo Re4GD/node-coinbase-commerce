@@ -5,10 +5,9 @@ export type VerifyWebhookSuccess = {
 	typedBody: WebhookBody;
 	isVerified: boolean;
 };
-export type VerifyErrorReason = "NO_SIGNATURE" | "INVALID_SIGNATURE";
 export type VerifyWebhookError = {
 	isVerified: boolean;
-	error: VerifyErrorReason;
+	error: "NO_SIGNATURE" | "INVALID_SIGNATURE";
 };
 export type VerifyWebhookResult = VerifyWebhookSuccess | VerifyWebhookError;
 
