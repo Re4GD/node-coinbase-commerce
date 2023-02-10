@@ -12,6 +12,7 @@
 	"author": "Re4GD",
 	"license": "MIT",
 	"files": [
+		"src/*",
 		"dist/*"
 	],
 	"scripts": {
