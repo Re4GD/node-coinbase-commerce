@@ -1,15 +1,11 @@
 import { WebhookChargeBody } from "./webhook.charge";
 import { WebhookInvoiceBody } from "./webhook.invoice";
 
-export type VerifyWebhookSuccess = {
-	typedBody: WebhookBody;
+export type VerifyWebhookResult = {
 	isVerified: boolean;
+	typedBody?: WebhookBody;
+	error?: "NO_SIGNATURE" | "INVALID_SIGNATURE";
 };
-export type VerifyWebhookError = {
-	isVerified: boolean;
-	error: "NO_SIGNATURE" | "INVALID_SIGNATURE";
-};
-export type VerifyWebhookResult = VerifyWebhookSuccess | VerifyWebhookError;
 
 export type EventType =
 	| "charge:created"
