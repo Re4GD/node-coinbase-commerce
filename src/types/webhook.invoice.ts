@@ -41,7 +41,7 @@ interface Charge {
 	fee_rate: number;
 	logo_url: string;
 	metadata: Metadata;
-	payments: any[];
+	payments: Payment[];
 	resource: string;
 	timeline: Timeline[];
 	addresses: Addresses;
@@ -64,6 +64,51 @@ interface Charge {
 
 interface Localexchangerates {
 	"USDT-USDT": string;
+}
+
+interface Payment {
+	net: Net;
+	block: Block;
+	value: Net;
+	status: string;
+	network: string;
+	deposited: Deposited;
+	payment_id: string;
+	detected_at: string;
+	transaction_id: string;
+	coinbase_processing_fee: Net;
+}
+
+interface Deposited {
+	amount: Amount;
+	status: string;
+	destination: string;
+	exchange_rate?: any;
+	autoconversion_status: string;
+	autoconversion_enabled: boolean;
+}
+
+interface Amount {
+	net: Net2;
+	gross: Net2;
+	coinbase_fee: Net2;
+}
+
+interface Net2 {
+	local?: any;
+	crypto: Local;
+}
+
+interface Block {
+	hash: string;
+	height: number;
+	confirmations: number;
+	confirmations_required: number;
+}
+
+interface Net {
+	local: Local;
+	crypto: Local;
 }
 
 interface Paymentthreshold {
