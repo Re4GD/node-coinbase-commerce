@@ -1,5 +1,11 @@
 export * from "./";
 export * from "./client";
+// export * from "./types/charge";
+// export * from "./types/checkout";
 export * from "./types/client";
+// export * from "./types/event";
+export * from "./types/invoice";
 export * from "./types/webhook";
+export * from "./types/webhook.charge";
+export * from "./types/webhook.invoice";
 export * from "./webhook";
