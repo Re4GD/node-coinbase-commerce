@@ -1,5 +1,9 @@
 # Node.js Typescript Coinbase Commerce API
 
+[![npm version](https://img.shields.io/npm/v/node-coinbase-commerce)][1]
+[![npm downloads](https://img.shields.io/npm/dt/node-coinbase-commerce)][1]
+[![last commit](https://img.shields.io/github/last-commit/re4gd/node-coinbase-commerce)][1]
+
 Node.js connector for the Coinbase Commerce API with Typescript.
 
 - Simple and unopiniated connector.
