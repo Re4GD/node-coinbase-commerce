@@ -1,13 +1,19 @@
 {
 	"name": "node-coinbase-commerce",
-	"version": "0.1.6",
+	"version": "0.1.7",
 	"description": "Node Coinbase Commerce API client",
 	"main": "dist/index.js",
 	"module": "dist/index.mjs",
 	"types": "dist/index.d.ts",
 	"keywords": [
 		"coinbase",
-		"commerce"
+		"commerce",
+		"axios",
+		"rest",
+		"rest api",
+		"node",
+		"nodejs",
+		"promise"
 	],
 	"author": "Re4GD",
 	"license": "MIT",
