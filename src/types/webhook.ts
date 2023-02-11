@@ -1,10 +1,13 @@
 import { WebhookChargeBody } from "./webhook.charge";
 import { WebhookInvoiceBody } from "./webhook.invoice";
 
+export type WebhookBody = WebhookInvoiceBody | WebhookChargeBody;
+
 export type VerifyWebhookResult = {
 	isVerified: boolean;
-	typedBody?: WebhookBody;
 	error?: "NO_SIGNATURE" | "INVALID_SIGNATURE";
+	rawBody: unknown;
+	typedBody?: WebhookBody;
 };
 
 export type EventType =
@@ -20,5 +23,3 @@ export type EventType =
 	| "invoice:unresolved"
 	| "invoice:viewed"
 	| "invoice:voided";
-
-export type WebhookBody = WebhookInvoiceBody | WebhookChargeBody;

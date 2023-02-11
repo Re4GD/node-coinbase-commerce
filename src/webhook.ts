@@ -7,14 +7,19 @@ export const verifyWebhook = (
 	sharedSecret: string,
 ): VerifyWebhookResult => {
 	if (!signature) {
-		return { isVerified: false, error: "NO_SIGNATURE" };
+		return { isVerified: false, rawBody: rawBody, error: "NO_SIGNATURE" };
 	}
 	const coinBaseSignature = crypto
 		.createHmac("sha256", sharedSecret)
 		.update(JSON.stringify(rawBody))
 		.digest("hex");
 	if (signature !== coinBaseSignature) {
-		return { isVerified: false, error: "INVALID_SIGNATURE" };
+		return { isVerified: false, rawBody: rawBody, error: "INVALID_SIGNATURE" };
 	}
-	return { isVerified: true, typedBody: rawBody as WebhookBody };
+	// TODO check types with zod
+	return {
+		isVerified: true,
+		rawBody: rawBody,
+		typedBody: rawBody as WebhookBody,
+	};
 };
