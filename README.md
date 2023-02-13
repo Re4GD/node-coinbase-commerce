@@ -78,7 +78,15 @@ const invoice = await client.resolveInvoice({
 
 ## Events
 
-Coming soon
+```typescript
+const events = await client.listEvents();
+```
+
+```typescript
+const invoice = await client.showEvent({
+	event_id: "XXX", // uuidv4
+});
+```
 
 # Webhooks
 
