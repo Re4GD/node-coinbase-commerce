@@ -3,6 +3,7 @@ import { CBResponse, CBResponseWithPagination, Result } from "./types";
 import {
 	CreateInvoiceParams,
 	ResolveInvoiceParams,
+	ShowEventParams,
 	ShowInvoiceParams,
 	VoidInvoiceParams,
 } from "./types/client";
@@ -27,9 +28,10 @@ export class CoinbaseCommerceClient {
 
 	// TODO charges
 	// TODO checkout
-	// TODO events
 
-	public async listInvoices(): Promise<Result<CBResponseWithPagination<any>>> {
+	public async listInvoices(): Promise<
+		Result<CBResponseWithPagination<Invoice[]>>
+	> {
 		try {
 			const { data } = await this.axiosInstance.get(
 				"https://api.commerce.coinbase.com/invoices",
@@ -86,6 +88,30 @@ export class CoinbaseCommerceClient {
 		try {
 			const { data } = await this.axiosInstance.put(
 				`https://api.commerce.coinbase.com/invoices/${params.invoice_code_or_invoice_id}/resolve`,
+			);
+			return { result: data };
+		} catch (error) {
+			return { error: error };
+		}
+	}
+
+	public async listEvents(): Promise<Result<CBResponseWithPagination<any[]>>> {
+		try {
+			const { data } = await this.axiosInstance.get(
+				"https://api.commerce.coinbase.com/events",
+			);
+			return { result: data };
+		} catch (error) {
+			return { error: error };
+		}
+	}
+
+	public async showEvent(
+		params: ShowEventParams,
+	): Promise<Result<CBResponse<any>>> {
+		try {
+			const { data } = await this.axiosInstance.get(
+				`https://api.commerce.coinbase.com/events/${params.event_id}`,
 			);
 			return { result: data };
 		} catch (error) {
