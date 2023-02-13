@@ -1,0 +1,26 @@
+{
+	"attempt_number": 1,
+	"event": {
+		"api_version": "2018-03-22",
+		"created_at": "YYYY-MM-DDTHH:MM:SSZ",
+		"data": {
+			"id": "UUID_V4",
+			"code": "INVOICE_CODE",
+			"memo": "MEMO",
+			"status": "VOID",
+			"resource": "invoice",
+			"created_at": "YYYY-MM-DDTHH:MM:SSZ",
+			"hosted_url": "https://commerce.coinbase.com/invoices/INVOICE_CODE",
+			"updated_at": "YYYY-MM-DDTHH:MM:SSZ",
+			"local_price": { "amount": "120.000000", "currency": "USDT" },
+			"business_name": "BUSINESS_NAME",
+			"customer_name": "CUSTOMER_NAME",
+			"customer_email": "CUSTOMER_EMAIL"
+		},
+		"id": "UUID_V4",
+		"resource": "event",
+		"type": "invoice:voided"
+	},
+	"id": "UUID_V4",
+	"scheduled_for": "YYYY-MM-DDTHH:MM:SSZ"
+}
