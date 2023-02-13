@@ -8,11 +8,10 @@ describe("coinbase-commerce", () => {
 	}
 	const client = new CoinbaseCommerceClient(API_KEY);
 
-	test("adds 1 + 2 to equal 3", async () => {
-		expect(3).toBe(3);
-	});
-
-	test("adds 3 + 4 to equal 7", async () => {
-		expect(7).toBe(7);
+	test("list invoices", async () => {
+		const { result, error } = await client.listInvoices();
+		expect(error).toBeUndefined();
+		expect(result).toBeDefined();
+		console.log(result?.data);
 	});
 });
