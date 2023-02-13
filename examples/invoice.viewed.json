@@ -1,0 +1,73 @@
+{
+	"attempt_number": 1,
+	"event": {
+		"api_version": "2018-03-22",
+		"created_at": "YYYY-MM-DDTHH:MM:SSZ",
+		"data": {
+			"id": "UUID_V4",
+			"code": "INVOICE_CODE",
+			"memo": "MEMO",
+			"charge": {
+				"id": "UUID_V4",
+				"code": "CHARGE_CODE",
+				"utxo": false,
+				"invoice": {
+					"id": "UUID_V4",
+					"code": "INVOICE_CODE"
+				},
+				"pricing": {
+					"local": { "amount": "120.000000", "currency": "USDT" },
+					"tether": { "amount": "120.000000", "currency": "USDT" }
+				},
+				"fee_rate": 0.01,
+				"logo_url": "LOGO_URL",
+				"metadata": {
+					"name": "CUSTOMER_NAME",
+					"email": "CUSTOMER_EMAIL"
+				},
+				"payments": [],
+				"resource": "charge",
+				"timeline": [{ "time": "YYYY-MM-DDTHH:MM:SSZ", "status": "NEW" }],
+				"addresses": { "tether": "0x..." },
+				"pwcb_only": false,
+				"created_at": "YYYY-MM-DDTHH:MM:SSZ",
+				"expires_at": "YYYY-MM-DDTHH:MM:SSZ",
+				"hosted_url": "https://commerce.coinbase.com/charges/CHARGE_CODE",
+				"brand_color": "#BRAND_COLOR_HEX",
+				"fees_settled": true,
+				"pricing_type": "fixed_price",
+				"support_email": "SUPPORT_EMAIL",
+				"brand_logo_url": "LOGO_URL",
+				"exchange_rates": { "USDT-USD": "1.000105" },
+				"offchain_eligible": false,
+				"organization_name": "ORGANIZATION_NAME",
+				"payment_threshold": {
+					"overpayment_absolute_threshold": {
+						"amount": "5.00",
+						"currency": "USD"
+					},
+					"underpayment_absolute_threshold": {
+						"amount": "5.00",
+						"currency": "USD"
+					}
+				},
+				"local_exchange_rates": { "USDT-USDT": "1.000000" },
+				"coinbase_managed_merchant": false
+			},
+			"status": "VIEWED",
+			"resource": "invoice",
+			"created_at": "YYYY-MM-DDTHH:MM:SSZ",
+			"hosted_url": "https://commerce.coinbase.com/invoices/INVOICE_CODE",
+			"updated_at": "YYYY-MM-DDTHH:MM:SSZ",
+			"local_price": { "amount": "120.000000", "currency": "USDT" },
+			"business_name": "BUSINESS_NAME",
+			"customer_name": "CUSTOMER_NAME",
+			"customer_email": "CUSTOMER_EMAIL"
+		},
+		"id": "UUID_V4",
+		"resource": "event",
+		"type": "invoice:viewed"
+	},
+	"id": "UUID_V4",
+	"scheduled_for": "YYYY-MM-DDTHH:MM:SSZ"
+}
