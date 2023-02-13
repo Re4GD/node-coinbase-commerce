@@ -1,9 +1,6 @@
 {
 	"$schema": "https://unpkg.com/@changesets/config@2.3.0/schema.json",
-	"changelog": [
-		"@changesets/cli/changelog",
-		{ "repo": "Re4GD/node-coinbase-commerce" }
-	],
+	"changelog": ["@changesets/cli/changelog"],
 	"commit": false,
 	"fixed": [],
 	"linked": [],
