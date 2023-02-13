@@ -1,0 +1,131 @@
+{
+	"attempt_number": 1,
+	"event": {
+		"api_version": "2018-03-22",
+		"created_at": "YYYY-MM-DDTHH:MM:SSZ",
+		"data": {
+			"id": "UUID_V4",
+			"code": "INVOICE_CODE",
+			"memo": "MEMO",
+			"charge": {
+				"id": "UUID_V4",
+				"code": "CHARGE_CODE",
+				"utxo": false,
+				"invoice": {
+					"id": "UUID_V4",
+					"code": "INVOICE_CODE"
+				},
+				"pricing": {
+					"local": { "amount": "120.000000", "currency": "USDT" },
+					"tether": { "amount": "120.000000", "currency": "USDT" }
+				},
+				"fee_rate": 0.01,
+				"logo_url": "LOGO_URL",
+				"metadata": {
+					"name": "CUSTOMER_NAME",
+					"email": "CUSTOMER_EMAIL"
+				},
+				"payments": [
+					{
+						"net": {
+							"local": { "amount": "120.000000", "currency": "USDT" },
+							"crypto": { "amount": "120.000000", "currency": "USDT" }
+						},
+						"block": {
+							"hash": "0x...",
+							"height": 0,
+							"confirmations": 0,
+							"confirmations_required": 0
+						},
+						"value": {
+							"local": { "amount": "120.000000", "currency": "USDT" },
+							"crypto": { "amount": "120.000000", "currency": "USDT" }
+						},
+						"status": "PENDING",
+						"network": "ethereum",
+						"deposited": {
+							"amount": {
+								"net": {
+									"local": null,
+									"crypto": { "amount": "120.000000", "currency": "USDT" }
+								},
+								"gross": {
+									"local": null,
+									"crypto": { "amount": "120.000000", "currency": "USDT" }
+								},
+								"coinbase_fee": {
+									"local": null,
+									"crypto": { "amount": "0.000000", "currency": "USDT" }
+								}
+							},
+							"status": "COMPLETED",
+							"destination": "SUPPORT_EMAIL",
+							"exchange_rate": null,
+							"autoconversion_status": "PENDING",
+							"autoconversion_enabled": false
+						},
+						"payment_id": "UUID_V4",
+						"detected_at": "YYYY-MM-DDTHH:MM:SSZ",
+						"transaction_id": "0x...",
+						"coinbase_processing_fee": {
+							"local": { "amount": "0.000000", "currency": "USDT" },
+							"crypto": { "amount": "0.000000", "currency": "USDT" }
+						}
+					}
+				],
+				"resource": "charge",
+				"timeline": [
+					{ "time": "YYYY-MM-DDTHH:MM:SSZ", "status": "NEW" },
+					{
+						"time": "YYYY-MM-DDTHH:MM:SSZ",
+						"status": "PENDING",
+						"payment": {
+							"value": { "amount": "120.000000", "currency": "USDT" },
+							"network": "tether",
+							"transaction_id": "0x..."
+						}
+					}
+				],
+				"addresses": { "tether": "0x..." },
+				"pwcb_only": false,
+				"created_at": "YYYY-MM-DDTHH:MM:SSZ",
+				"expires_at": "YYYY-MM-DDTHH:MM:SSZ",
+				"hosted_url": "https://commerce.coinbase.com/charges/CHARGE_CODE",
+				"brand_color": "#8897A7",
+				"fees_settled": true,
+				"pricing_type": "fixed_price",
+				"support_email": "SUPPORT_EMAIL",
+				"brand_logo_url": "LOGO_URL",
+				"exchange_rates": { "USDT-USD": "1.000125" },
+				"offchain_eligible": false,
+				"organization_name": "ORGANIZATION_NAME",
+				"payment_threshold": {
+					"overpayment_absolute_threshold": {
+						"amount": "5.00",
+						"currency": "USD"
+					},
+					"underpayment_absolute_threshold": {
+						"amount": "5.00",
+						"currency": "USD"
+					}
+				},
+				"local_exchange_rates": { "USDT-USDT": "1.000000" },
+				"coinbase_managed_merchant": false
+			},
+			"status": "PAYMENT_PENDING",
+			"resource": "invoice",
+			"created_at": "YYYY-MM-DDTHH:MM:SSZ",
+			"hosted_url": "https://commerce.coinbase.com/invoices/INVOICE_CODE",
+			"updated_at": "YYYY-MM-DDTHH:MM:SSZ",
+			"local_price": { "amount": "120.000000", "currency": "USDT" },
+			"business_name": "BUSINESS_NAME",
+			"customer_name": "CUSTOMER_NAME",
+			"customer_email": "CUSTOMER_EMAIL"
+		},
+		"id": "UUID_V4",
+		"resource": "event",
+		"type": "invoice:payment_pending"
+	},
+	"id": "UUID_V4",
+	"scheduled_for": "YYYY-MM-DDTHH:MM:SSZ"
+}
