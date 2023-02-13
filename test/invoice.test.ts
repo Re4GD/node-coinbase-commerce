@@ -12,6 +12,16 @@ describe("coinbase-commerce", () => {
 		const { result, error } = await client.listInvoices();
 		expect(error).toBeUndefined();
 		expect(result).toBeDefined();
-		console.log(result?.data);
+	});
+
+	test("show invoice", async () => {
+		const { result, error } = await client.listInvoices();
+		expect(error).toBeUndefined();
+		expect(result).toBeDefined();
+		const { result: showResult, error: showError } = await client.showInvoice({
+			invoice_code_or_invoice_id: result!.data[0]!.code,
+		});
+		expect(showError).toBeUndefined();
+		expect(showResult).toBeDefined();
 	});
 });
