@@ -37,7 +37,48 @@ Coming soon
 
 ## Checkouts
 
-Coming soon
+```typescript
+const checkouts = await client.listCheckouts();
+```
+
+```typescript
+const checkout = await client.createCheckout({
+	name: "Product name",
+	description: "Product description",
+	requested_info: ["name", "email", "address", "phone"],
+	pricing_type: "fixed_price",
+	local_price: {
+		amount: 100,
+		currency: "USDT", // BTC, ETH, USDT
+	},
+});
+```
+
+```typescript
+const checkout = await client.showCheckout({
+	checkout_id: "XXX",
+});
+```
+
+```typescript
+const checkout = await client.updateCheckout({
+	checkout_id: "XXX",
+	name: "Product name",
+	description: "Product description",
+	requested_info: ["name", "email", "address", "phone"],
+	pricing_type: "fixed_price",
+	local_price: {
+		amount: 100,
+		currency: "USDT", // BTC, ETH, USDT
+	},
+});
+```
+
+```typescript
+await client.deleteCheckout({
+	checkout_id: "XXX",
+});
+```
 
 ## Invoices
 
