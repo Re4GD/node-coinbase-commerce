@@ -22,6 +22,7 @@ export class CoinbaseCommerceClient {
 
 	constructor(apiKey: string, requestOptions: AxiosRequestConfig = {}) {
 		this.globalRequestOptions = {
+			baseURL: "https://api.commerce.coinbase.com",
 			headers: {
 				accept: "application/json",
 				"X-CC-Version": "2018-03-22",
@@ -39,9 +40,7 @@ export class CoinbaseCommerceClient {
 		Result<CBResponseWithPagination<Checkout[]>>
 	> {
 		try {
-			const { data } = await this.axiosInstance.get(
-				"https://api.commerce.coinbase.com/checkouts",
-			);
+			const { data } = await this.axiosInstance.get("/checkouts");
 			return { result: data };
 		} catch (error) {
 			return { error: error };
@@ -52,10 +51,7 @@ export class CoinbaseCommerceClient {
 		params: CreateCheckoutParams,
 	): Promise<Result<CBResponse<Checkout>>> {
 		try {
-			const { data } = await this.axiosInstance.post(
-				"https://api.commerce.coinbase.com/checkouts",
-				params,
-			);
+			const { data } = await this.axiosInstance.post("/checkouts", params);
 			return { result: data };
 		} catch (error) {
 			return { error: error };
@@ -67,7 +63,7 @@ export class CoinbaseCommerceClient {
 	): Promise<Result<CBResponseWithPagination<Checkout>>> {
 		try {
 			const { data } = await this.axiosInstance.get(
-				`https://api.commerce.coinbase.com/checkouts/${params.checkout_id}`,
+				`/checkouts/${params.checkout_id}`,
 			);
 			return { result: data };
 		} catch (error) {
@@ -80,7 +76,7 @@ export class CoinbaseCommerceClient {
 	): Promise<Result<CBResponse<Checkout>>> {
 		try {
 			const { data } = await this.axiosInstance.put(
-				`https://api.commerce.coinbase.com/checkouts/${params.checkout_id}`,
+				`/checkouts/${params.checkout_id}`,
 			);
 			return { result: data };
 		} catch (error) {
@@ -93,7 +89,7 @@ export class CoinbaseCommerceClient {
 	): Promise<Result<CBResponse>> {
 		try {
 			const { data } = await this.axiosInstance.delete(
-				`https://api.commerce.coinbase.com/checkouts/${params.checkout_id}`,
+				`/checkouts/${params.checkout_id}`,
 			);
 			return { result: data };
 		} catch (error) {
@@ -105,9 +101,7 @@ export class CoinbaseCommerceClient {
 		Result<CBResponseWithPagination<Invoice[]>>
 	> {
 		try {
-			const { data } = await this.axiosInstance.get(
-				"https://api.commerce.coinbase.com/invoices",
-			);
+			const { data } = await this.axiosInstance.get("/invoices");
 			return { result: data };
 		} catch (error) {
 			return { error: error };
@@ -118,10 +112,7 @@ export class CoinbaseCommerceClient {
 		params: CreateInvoiceParams,
 	): Promise<Result<CBResponse<Invoice>>> {
 		try {
-			const { data } = await this.axiosInstance.post(
-				"https://api.commerce.coinbase.com/invoices",
-				params,
-			);
+			const { data } = await this.axiosInstance.post("/invoices", params);
 			return { result: data };
 		} catch (error) {
 			return { error: error };
@@ -133,7 +124,7 @@ export class CoinbaseCommerceClient {
 	): Promise<Result<CBResponseWithPagination<Invoice>>> {
 		try {
 			const { data } = await this.axiosInstance.get(
-				`https://api.commerce.coinbase.com/invoices/${params.invoice_code_or_invoice_id}`,
+				`/invoices/${params.invoice_code_or_invoice_id}`,
 			);
 			return { result: data };
 		} catch (error) {
@@ -146,7 +137,7 @@ export class CoinbaseCommerceClient {
 	): Promise<Result<CBResponse<Invoice>>> {
 		try {
 			const { data } = await this.axiosInstance.put(
-				`https://api.commerce.coinbase.com/invoices/${params.invoice_code_or_invoice_id}/void`,
+				`/invoices/${params.invoice_code_or_invoice_id}/void`,
 			);
 			return { result: data };
 		} catch (error) {
@@ -159,7 +150,7 @@ export class CoinbaseCommerceClient {
 	): Promise<Result<CBResponse<Invoice>>> {
 		try {
 			const { data } = await this.axiosInstance.put(
-				`https://api.commerce.coinbase.com/invoices/${params.invoice_code_or_invoice_id}/resolve`,
+				`/invoices/${params.invoice_code_or_invoice_id}/resolve`,
 			);
 			return { result: data };
 		} catch (error) {
@@ -167,25 +158,21 @@ export class CoinbaseCommerceClient {
 		}
 	}
 
-	// TODO any type
 	public async listEvents(): Promise<Result<CBResponseWithPagination<any[]>>> {
 		try {
-			const { data } = await this.axiosInstance.get(
-				"https://api.commerce.coinbase.com/events",
-			);
+			const { data } = await this.axiosInstance.get("/events");
 			return { result: data };
 		} catch (error) {
 			return { error: error };
 		}
 	}
 
-	// TODO any type
 	public async showEvent(
 		params: ShowEventParams,
 	): Promise<Result<CBResponse<any>>> {
 		try {
 			const { data } = await this.axiosInstance.get(
-				`https://api.commerce.coinbase.com/events/${params.event_id}`,
+				`/events/${params.event_id}`,
 			);
 			return { result: data };
 		} catch (error) {
