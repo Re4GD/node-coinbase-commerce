@@ -131,10 +131,13 @@ interface Timeline {
 	context?: string;
 }
 
-// TODO more metadata phone address etc
 interface Metadata {
-	name: string;
-	email: string;
+	name?: string;
+	email?: string;
+	address?: string;
+	phone?: string;
+	employer?: string;
+	occupation?: string;
 }
 
 interface Pricing {
