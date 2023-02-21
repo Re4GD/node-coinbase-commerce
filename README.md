@@ -33,7 +33,45 @@ export const client = new CoinbaseCommerceClient(API_KEY);
 
 ## Charges
 
-Coming soon
+```typescript
+const charges = await client.listCharges();
+```
+
+```typescript
+const checkout = await client.createCharge({
+	name: "Product name",
+	description: "Product description",
+	pricing_type: "fixed_price",
+	local_price: {
+		amount: 100,
+		currency: "USDT", // BTC, ETH, USDT
+	},
+	metadata: {
+		customer_id: "Customer id",
+		customer_name: "Customer name",
+	},
+	redirect_url: "http://example.com/redirect_url",
+	cancel_url: "http://example.com/cancel_url",
+});
+```
+
+```typescript
+const charge = await client.showCharge({
+	charge_code_or_charge_id: "XXX",
+});
+```
+
+```typescript
+const charge = await client.cancelCharge({
+	charge_code_or_charge_id: "XXX",
+});
+```
+
+```typescript
+const charge = await client.resolveCharge({
+	charge_code_or_charge_id: "XXX",
+});
+```
 
 ## Checkouts
 
