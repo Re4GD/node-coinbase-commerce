@@ -16,7 +16,6 @@ export const verifyWebhook = (
 	if (signature !== coinBaseSignature) {
 		return { isVerified: false, rawBody: rawBody, error: "INVALID_SIGNATURE" };
 	}
-	// TODO check types with zod
 	return {
 		isVerified: true,
 		rawBody: rawBody,
