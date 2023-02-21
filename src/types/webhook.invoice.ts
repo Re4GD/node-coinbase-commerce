@@ -1,4 +1,4 @@
-import { LocalPrice } from "./common";
+import { CurrencyPrice } from "./common";
 import { EventType } from "./webhook";
 
 export interface WebhookInvoiceBody {
@@ -27,7 +27,7 @@ interface InvoiceData {
 	created_at: string;
 	hosted_url: string;
 	updated_at: string;
-	local_price: LocalPrice;
+	local_price: CurrencyPrice;
 	business_name: string;
 	customer_name: string;
 	customer_email: string;
@@ -97,7 +97,7 @@ interface Amount {
 
 interface Net2 {
 	local?: any;
-	crypto: LocalPrice;
+	crypto: CurrencyPrice;
 }
 
 interface Block {
@@ -108,13 +108,13 @@ interface Block {
 }
 
 interface Net {
-	local: LocalPrice;
-	crypto: LocalPrice;
+	local: CurrencyPrice;
+	crypto: CurrencyPrice;
 }
 
 interface Paymentthreshold {
-	overpayment_absolute_threshold: LocalPrice;
-	underpayment_absolute_threshold: LocalPrice;
+	overpayment_absolute_threshold: CurrencyPrice;
+	underpayment_absolute_threshold: CurrencyPrice;
 }
 
 interface Exchangerates {
@@ -138,8 +138,8 @@ interface Metadata {
 }
 
 interface Pricing {
-	local: LocalPrice;
-	tether: LocalPrice;
+	local: CurrencyPrice;
+	tether: CurrencyPrice;
 }
 
 interface Invoice {
