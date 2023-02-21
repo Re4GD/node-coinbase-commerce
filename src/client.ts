@@ -1,14 +1,18 @@
 import axios, { AxiosInstance, AxiosRequestConfig } from "axios";
 import {
+	CancelChargeParams,
 	CBResponse,
 	CBResponseWithPagination,
 	Checkout,
+	CreateChargeParams,
 	CreateCheckoutParams,
 	CreateInvoiceParams,
 	DeleteCheckoutParams,
 	Invoice,
+	ResolveChargeParams,
 	ResolveInvoiceParams,
 	Result,
+	ShowChargeParams,
 	ShowCheckoutParams,
 	ShowEventParams,
 	ShowInvoiceParams,
@@ -34,7 +38,64 @@ export class CoinbaseCommerceClient {
 		this.axiosInstance = axios.create(this.globalRequestOptions);
 	}
 
-	// TODO charges
+	public async listCharges(): Promise<Result<CBResponseWithPagination<any[]>>> {
+		try {
+			const { data } = await this.axiosInstance.get("/charges");
+			return { result: data };
+		} catch (error) {
+			return { error: error };
+		}
+	}
+
+	public async createCharge(
+		params: CreateChargeParams,
+	): Promise<Result<CBResponse<any>>> {
+		try {
+			const { data } = await this.axiosInstance.post("/charges", params);
+			return { result: data };
+		} catch (error) {
+			return { error: error };
+		}
+	}
+
+	public async showCharge(
+		params: ShowChargeParams,
+	): Promise<Result<CBResponseWithPagination<any>>> {
+		try {
+			const { data } = await this.axiosInstance.get(
+				`/charges/${params.charge_code_or_charge_id}`,
+			);
+			return { result: data };
+		} catch (error) {
+			return { error: error };
+		}
+	}
+
+	public async cancelCharge(
+		params: CancelChargeParams,
+	): Promise<Result<CBResponse<any>>> {
+		try {
+			const { data } = await this.axiosInstance.post(
+				`/charges/${params.charge_code_or_charge_id}/cancel`,
+			);
+			return { result: data };
+		} catch (error) {
+			return { error: error };
+		}
+	}
+
+	public async resolveCharge(
+		params: ResolveChargeParams,
+	): Promise<Result<CBResponse<any>>> {
+		try {
+			const { data } = await this.axiosInstance.post(
+				`/charges/${params.charge_code_or_charge_id}/resolve`,
+			);
+			return { result: data };
+		} catch (error) {
+			return { error: error };
+		}
+	}
 
 	public async listCheckouts(): Promise<
 		Result<CBResponseWithPagination<Checkout[]>>
