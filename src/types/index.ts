@@ -1,5 +1,6 @@
 export * from "./charge";
 export * from "./checkout";
+export * from "./client.charge";
 export * from "./client.checkout";
 export * from "./client.event";
 export * from "./client.invoice";
