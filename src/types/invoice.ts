@@ -1,5 +1,3 @@
-import { CurrencyPrice } from "./common";
-
 export interface Invoice {
 	id: string;
 	resource: string;
@@ -9,7 +7,10 @@ export interface Invoice {
 	customer_email: string;
 	customer_name: string;
 	memo: string;
-	local_price: CurrencyPrice;
+	local_price: {
+		amount: number;
+		currency: string;
+	};
 	hosted_url: string;
 	created_at: string;
 	updated_at: string;

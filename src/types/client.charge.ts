@@ -1,10 +1,11 @@
-import { CurrencyPrice } from "./common";
-
 export type CreateChargeParams = {
 	name: string;
 	description: string;
 	pricing_type: string;
-	local_price: CurrencyPrice;
+	local_price: {
+		amount: number;
+		currency: string;
+	};
 	metadata: {
 		customer_id: string;
 		customer_name: string;

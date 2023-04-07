@@ -1,11 +1,12 @@
-import { CurrencyPrice } from "./common";
-
 export type CreateInvoiceParams = {
 	business_name: string;
 	customer_email: string;
 	customer_name: string;
 	memo: string;
-	local_price: CurrencyPrice;
+	local_price: {
+		amount: number;
+		currency: string;
+	};
 };
 
 export type ShowInvoiceParams = {

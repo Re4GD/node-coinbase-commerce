@@ -1,8 +1,4 @@
-import {
-	CurrencyPrice,
-	FixedPriceRequestedInfo,
-	NoPriceRequestedInfo,
-} from "./common";
+import { FixedPriceRequestedInfo, NoPriceRequestedInfo } from "./common";
 
 export type CreateCheckoutParams =
 	| CreateFixedPriceCheckoutParams
@@ -13,7 +9,10 @@ export type CreateFixedPriceCheckoutParams = {
 	description: string;
 	requested_info: FixedPriceRequestedInfo[];
 	pricing_type: "fixed_price";
-	local_price: CurrencyPrice;
+	local_price: {
+		amount: number;
+		currency: string;
+	};
 };
 
 export type CreateNoPriceCheckoutParams = {
@@ -21,7 +20,10 @@ export type CreateNoPriceCheckoutParams = {
 	description: string;
 	requested_info: NoPriceRequestedInfo[];
 	pricing_type: "no_price";
-	local_price: CurrencyPrice;
+	local_price: {
+		amount: number;
+		currency: string;
+	};
 };
 
 export type ShowCheckoutParams = {
@@ -38,7 +40,10 @@ export type UpdateFixedPriceCheckoutParams = {
 	description: string;
 	requested_info: FixedPriceRequestedInfo[];
 	pricing_type: "fixed_price";
-	local_price: CurrencyPrice;
+	local_price: {
+		amount: number;
+		currency: string;
+	};
 };
 
 export type UpdateNoPriceCheckoutParams = {
